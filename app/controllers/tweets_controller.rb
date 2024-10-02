@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
     if params[:query].present?
       @tweets = Tweet.search_full_text(params[:query]).page(params[:page]).per(10)
+      puts @tweets.inspect
     else
       @tweets = Tweet.page(params[:page]).per(10)
     end
