@@ -2,17 +2,10 @@
 
 <div class="container mt-5">
   <h1 class="mb-4">Editing Tweet</h1>
-
-  <!-- Renderiza el formulario utilizando Bootstrap -->
   <%= render "form", tweet: @tweet %>
-
   <br>
-
-  <div class="mt-3">
-    <!-- Botón para mostrar el tweet -->
+  <div class="mt-3">  
     <%= link_to "Show this tweet", @tweet, class: "btn btn-info" %>
-
-    <!-- Botón para volver a la lista de tweets -->
     <%= link_to "Back to tweets", tweets_path, class: "btn btn-secondary ms-3" %>
   </div>
 </div>
