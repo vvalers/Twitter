@@ -4,7 +4,7 @@ class TweetsController < ApplicationController
   # GET /tweets or /tweets.json
   def index
     if params[:query].present?
-      if params[:query].to_i.to_s == params[:query] # Verifica si la búsqueda es un número (posible ID)
+      if params[:query].to_i.to_s == params[:query]
         @tweets = Tweet.where(id: params[:query]).page(params[:page]).per(10)
       else
         @tweets = Tweet.search_full_text(params[:query]).page(params[:page]).per(10)
